@@ -1,8 +1,10 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const infuraKey = "3f6e2b3b9a134a6497b0db975d71c810";
+const t = 'https://ropsten.infura.io/v3/3f6e2b3b9a134a6497b0db975d71c810';
 
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
+const ethereum_api_key = fs.readFileSync(".ethereum_api_key").toString().trim();
 
 module.exports = {
 
@@ -35,6 +37,13 @@ module.exports = {
     solc: {
       version: "0.8.16"
     }
+  },
+
+  //this to verify smart contract in etherscan
+  plugins: ['truffle-plugin-verify'],
+  api_keys: {
+    etherscan: ethereum_api_key
   }
+
 };
 
