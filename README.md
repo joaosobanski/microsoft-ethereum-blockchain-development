@@ -1,4 +1,4 @@
-# windows-ethereum-blockchain-development
+# microsoft-ethereum-blockchain-development
 This repository was created to practice an activity originated in the Microsoft blockchain development course
 </br>
 Follow link to course
