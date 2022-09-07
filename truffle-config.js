@@ -7,16 +7,6 @@ const mnemonic = fs.readFileSync(".secret").toString().trim();
 const ethereum_api_key = fs.readFileSync(".ethereum_api_key").toString().trim();
 
 module.exports = {
-
-  /*
-  networks: {
-    development: {
-      host: "127.0.0.1",
-      port: 8545,
-      network_id: "*" // Match any network id
-    }
-  },
-  */
   networks: {
     ropsten: {
       provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/${infuraKey}`),
@@ -26,9 +16,9 @@ module.exports = {
       timeoutBlocks: 200,  // # of blocks before a deployment times out (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     },
-    loc_development_development: {
-      network_id: "*",
-      port: 8545,
+    development: {
+      network_id: "5777",
+      port: 8544,
       host: "127.0.0.1"
     }
   },
